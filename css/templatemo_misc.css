@@ -1,3 +1,82 @@
+.focuser1 {
+  position: absolute;
+  top: 410px;
+  left: 275px;
+  }
+
+.focuser2 {
+  position: absolute;
+  top: 410px;
+  left: 320px;
+  }
+
+.focuser3 {
+  position: absolute;
+  top: 410px;
+  left: 365px;
+  }
+
+.focuser4 {
+  position: absolute;
+  top: 410px;
+  left: 410px;
+  }
+
+.focuser5 {
+  position: absolute;
+  top: 410px;
+  left: 620px;
+  }
+
+.focuser6 {
+  position: absolute;
+  top: 410px;
+  left: 665px;
+  }
+
+.focuser7 {
+  position: absolute;
+  top: 410px;
+  left: 710px;
+  }
+
+.focuser8 {
+  position: absolute;
+  top: 410px;
+  left: 755px;
+  }
+
+.focuser9 {
+  position: absolute;
+  top: 410px;
+  left: 965px;
+  }
+
+.focuser10 {
+  position: absolute;
+  top: 410px;
+  left: 1010px;
+  }
+
+.focuser11 {
+  position: absolute;
+  top: 410px;
+  left: 1055px;
+  }
+
+.focuser12 {
+  position: absolute;
+  top: 410px;
+  left: 1100px;
+  }
+
+.bg-white {
+  background-color: white !important;
+}
+
+.bg-yellow{
+  background-color: yellow !important;
+}
 
 #lightbox {
   position: fixed;
@@ -58,6 +137,116 @@ body.blurred > * {
   line-height: 18px;
 }
 
+.lightbox-title1 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 660px;
+  top: 80px;
+  font-size: 32px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-text1 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 550px;
+  top: 130px;
+  font-size: 20px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-title2 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 633px;
+  top: 80px;
+  font-size: 32px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-text2 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 545px;
+  top: 130px;
+  font-size: 20px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-title3 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 595px;
+  top: 90px;
+  font-size: 32px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-title4 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 640px;
+  top: 90px;
+  font-size: 32px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-caption1 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 300px;
+  top: 165px;
+  font-size: 16px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-caption2 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 300px;
+  bottom: 80px;
+  font-size: 16px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-caption3 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 640px;
+  top: 165px;
+  font-size: 16px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-caption4 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 980px;
+  top: 165px;
+  font-size: 16px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
 .lightbox-button {
   position: absolute;
   z-index: 9999;
@@ -102,16 +291,183 @@ body.blurred > * {
   transform: scale(1.4);
 }
 
+.lightbox-legend1 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 10px;
+  right: 90px;
+  font-size: 12px;
+}
+
+.lightbox-legend2 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 10px;
+  right: 230px;
+  font-size: 12px;
+}
+
+.lightbox-legend3 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 10px;
+  right: 340px;
+  font-size: 12px;
+}
+
+.lightbox-legend4 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 10px;
+  right: 465px;
+  font-size: 12px;
+}
+
+.lightbox-legend5 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 10px;
+  right: 595px;
+  font-size: 12px;
+}
+
+.lightbox-footer1 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 630px;
+  left: 355px;
+  font-size: 16px;
+}
+
+.lightbox-footer2 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 655px;
+  left: 300px;
+  font-size: 16px;
+}
+
+.lightbox-footer3 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  bottom: 65px;
+  left: 560px;
+  font-size: 16px;
+}
+
+.lightbox-footer4 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  bottom: 38px;
+  left: 515px;
+  font-size: 16px;
+}
+
+.lightbox-footer5 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 645px;
+  left: 305px;
+  font-size: 16px;
+}
+
+.lightbox-footer6 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 670px;
+  left: 450px;
+  font-size: 16px;
+}
+
+.lightbox-footer7 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 625px;
+  left: 310px;
+  font-size: 16px;
+}
+
+.lightbox-footer8 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 650px;
+  left: 430px;
+  font-size: 16px;
+}
+
 .lightbox-close {
   right: 30px;
   top: 30px;
   background-image: url("../images/close.png");
 }
 
-.lightbox-download {
-  right: 70px;
+.lightbox-btn1 {
+  right: 90px;
   top: 30px;
-  background-image: url("../images/b2.png");
+  background-image: url("../images/btn1.png");
+}
+
+.lightbox-btn2 {
+  right: 210px;
+  top: 30px;
+  background-image: url("../images/btn2.png");
+}
+
+.lightbox-btn3 {
+  right: 330px;
+  top: 30px;
+  background-image: url("../images/btn3.png");
+}
+
+.lightbox-btn4 {
+  right: 450px;
+  top: 30px;
+  background-image: url("../images/btn4.png");
+}
+
+.lightbox-btn5 {
+  right: 570px;
+  top: 30px;
+  background-image: url("../images/btn5.png");
 }
 
 .close:hover,

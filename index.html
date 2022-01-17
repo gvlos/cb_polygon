@@ -16,10 +16,14 @@
     <link rel="stylesheet" href="css/templatemo_misc.css">
     <link href="css/templatemo_style.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
 
+    <script src="https://unpkg.com/d3-3d/build/d3-3d.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
     <script src="js/jquery-1.10.2.min.js"></script>
-	<script src="js/jquery.lightbox.js"></script>
-	<script src="js/templatemo_custom.js"></script>
+	  <script src="js/jquery.lightbox.js"></script>
+	  <script src="js/templatemo_custom.js"></script>
     <script>
     function showhide()
     {
@@ -74,8 +78,8 @@
 			<div class="responsive_menu">
 				<ul>
 					<li><a class="show-1 templatemo_home" href="#">Gallery</a></li>
-					<li><a class="show-2 templatemo_page2" href="#">Paper</a></li>
-					<li><a class="show-3 templatemo_page3" href="#">Resources</a></li>
+					<!-- <li><a class="show-2 templatemo_page2" href="#">Paper</a></li> -->
+					<li><a class="show-3 templatemo_page3" href="#">Info</a></li>
 					<li><a class="show-5 templatemo_page5" href="#">Contact</a></li>
 				</ul>
 			</div>
@@ -87,7 +91,7 @@
 				        </a>
 					</div> <!-- /.col-md-12 -->
                     <div class="col-md-3 col-sm-12">
-                    	<a href="#"><img src="images/S.png" alt="Polygon HTML5 Template"></a>
+                    	<a href="#"><img src="images/logo.png" alt="Polygon HTML5 Template" width=520 height=52></a>
                     </div>
 					<div class="col-md-9 main_menu">
 						<ul>
@@ -96,10 +100,10 @@
                                 Gallery</a></li>
 							<li><a class="show-2 templatemo_page2" href="#">
                             	<span class="fa fa-users"></span>
-                          		  Resources</a></li>
-							<li><a class="show-3 templatemo_page3" href="#">
+                          		  Info</a></li>
+							<!-- <li><a class="show-3 templatemo_page3" href="#">
                             	<span class="fa fa-cogs"></span>
-                            	Info</a></li>
+                            	Info</a></li> -->
 							<li><a class="show-5 templatemo_page5" href="#">
                             	<span class="fa fa-envelope"></span>
                                 Contact</a></li>
@@ -1482,177 +1486,47 @@
     </div>
   </div>
       <!-- gallery end -->
-    <!-- team start -->
+    <!-- resources start -->
+
     <div class="content team" id="menu-2">
      <div class="templatemo_ourteam">
      		<div class="container templatemo_hexteam">
-            	<div class="row">
-                	<div class="col-md-3 col-sm-4">
-                        	 <div class="hexagon hexagonteam gallery-item">
-                               <div class="hexagon-in1">
-                                <div class="hexagon-in2" style="background-image: url(images/team/1.jpg);">
-                                <div class="overlay templatemo_overlay1">
-                                	<a href="#fb">
-                                   	 <div class="smallhexagon">
-                                  	 	 <span class="fa fa-facebook"></span>
-                                 	  </div>
-                                    </a>
+          <h2>Color blindness</h2>
+          <p> Color blindness (color vision deficiency) is the decreased ability to see color or
+            differences in color. It can impair tasks such as selecting ripe fruit,
+            choosing clothing, and reading traffic lights. The most common cause of
+            color blindness is an inherited problem in
+               the development of one or more of the three sets of the eyes' cone
+               cells, which sense color. There are three main types of color blindness
+               going under the name of dichromacy, which means
+               only two different color receptors (cones) are in the retina instead of three:
+               <ul>
+                <li><b>Protanopia</b> : less sensitivity to red light because the
+                   red cone is missing, whereas the green and the blue cones are present</li>
+                <li><b>Deuteranopia</b>: less sensitivity to green light because the green
+                  cone is missing, whereas the red and the blue cones are present</li>
+                <li><b>Tritanopia</b>: less sensitivity to blue light because the blue
+                  cone is missing, whereas the red and the green cones are present</li>
+              </ul>
+            </p>
+             <p>Other three type of color blindness (protanomaly, deuteranomaly, and tritanomaly) go under the
+               classification of anomalous trichromacy, which means all three different color receptors
+               (cones) are present but one of them is shifted in its peak.</p>
+            <p>For more information see <a href="https://en.wikipedia.org/wiki/Color_blindness" target="_blank">Wikipedia</a>.</p>
 
-                                    <a href="#tw">
-                                     <div class="smallhexagon">
-                                       <span class="fa fa-twitter"></span>
-                                    </div>
-                                    </a>
+          <h2>Paper</h2>
+          <p>The dataset used in this website has been published with the paper
+          "Image Content Enhancement Through Salient Regions Segmentation for
+          People With Color Vision Deficiencies" by Alessandro Bruno et. al.</p>
+          <p>The paper is available <a href="https://doi.org/10.1177/2041669519841073" target="_blank">here</a>.</p>
+          <p>The dataset is available <a href="https://github.com/fgugliuzza/saliency/tree/master/etocvd" target="_blank">here</a>.</p>
 
-                                    <a href="#ln">
-                                     <div class="smallhexagon">
-                                       <span class="fa fa-linkedin"></span>
-                                    </div>
-                                    </a>
 
-                                    <a href="#rs">
-                                     <div class="smallhexagon">
-                                       <span class="fa fa-rss"></span>
-                                    </div>
-                                    </a>
-                                </div>
-                                <div class="clear"></div>
-                               	<div class="overlay templatemo_overlaytxt">Phasellus interdum</div>
-                                </div>
-                            </div>
-                          </div>
-  			       </div>
-                    <div class="col-md-3 col-sm-8 templatemo_servicetxt" >
-                    	<h2>Free Template</h2>
-                        <p>Polygon is free HTML5 template by <span class="blue">template</span><span class="green">mo</span> that can be used for any purpose. You can remove any credit link. Please tell your friends about our website. Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for images used in this template. Feel free to visit <a href="https://fb.com/templatemo" target="_parent">templatemo page</a> on Facebook.</p>
-                    </div>
-                    <div class="templatemo_servicecol2">
-                    <div class="col-md-3 col-sm-4">
-                        	 <div class="hexagon hexagonteam gallery-item">
-                               <div class="hexagon-in1">
-                                <div class="hexagon-in2" style="background-image: url(images/team/2.jpg);">
-                                <div class="overlay templatemo_overlay1">
-                                	<a href="#fb">
-                                   	 <div class="smallhexagon">
-                                  	 	 <span class="fa fa-facebook"></span>
-                                 	  </div>
-                                    </a>
-                                    <a href="#tw">
-                                     <div class="smallhexagon">
-                                       <span class="fa fa-twitter"></span>
-                                    </div>
-                                    </a>
-                                    <a href="#ln">
-                                     <div class="smallhexagon">
-                                       <span class="fa fa-linkedin"></span>
-                                    </div>
-                                    </a>
-                                    <a href="#rs">
-                                     <div class="smallhexagon">
-                                       <span class="fa fa-rss"></span>
-                                    </div>
-                                    </a>
-                                </div>
-
-                                <div class="clear"></div>
-                               	<div class="overlay templatemo_overlaytxt">Cras interdum accumsan diam</div>
-                                </div>
-                            </div>
-                          </div>
-  			       </div>
-                    <div class="col-md-3 col-sm-8 templatemo_servicetxt">
-                    	<h2>Responsive Design</h2>
-                        <p>Please take a look at <a rel="nofollow" href="https://www.toocss.com">Too CSS</a> to see the collection of free website templates for you. This is free CSS website template fully compatible with tablets and mobile phones. Mauris eget neque at sapien faucibus egestas vel vitae mi. Maecenas commodo augue risus, sed placerat neque feugiat vel.</p>
-                    </div>
-                    </div>
-               </div>
-            </div>
-            <div class="clear"></div>
-            <div class="container templatemo_hexteam s_top">
-            	<div class="row">
-                	<div class="col-md-3 col-sm-4">
-                        	 <div class="hexagon hexagonteam gallery-item">
-                               <div class="hexagon-in1">
-                                <div class="hexagon-in2" style="background-image: url(images/team/3.jpg);">
-                                <div class="overlay templatemo_overlay1">
-                                	<a href="#fb">
-                                   	 <div class="smallhexagon">
-                                  	 	 <span class="fa fa-facebook"></span>
-                                 	  </div>
-                                    </a>
-                                    <a href="#tw">
-                                     <div class="smallhexagon">
-                                       <span class="fa fa-twitter"></span>
-                                    </div>
-                                    </a>
-                                    <a href="#ln">
-                                     <div class="smallhexagon">
-                                       <span class="fa fa-linkedin"></span>
-                                    </div>
-                                    </a>
-                                    <a href="#rs">
-                                     <div class="smallhexagon">
-                                       <span class="fa fa-rss"></span>
-                                    </div>
-                                    </a>
-                                </div>
-
-                                <div class="clear"></div>
-                               	<div class="overlay templatemo_overlaytxt">Morbi pulvinar</div>
-                                </div>
-                            </div>
-                          </div>
-  			       </div>
-                    <div class="col-md-3 col-sm-8 templatemo_servicetxt" >
-                    	<h2>Mobile Ready</h2>
-                        <p>Sed laoreet, enim quis euismod egestas, risus tortor tincidunt lacus, in iaculis mauris lectus at augue. Donec luctus nibh nec ullamcorper feugiat. Phasellus felis urna, lobortis vitae lacus sit amet, tristique consectetur nibh.</p>
-                    </div>
-                    <div class="templatemo_servicecol2">
-                    <div class="col-md-3 col-sm-4">
-                        	 <div class="hexagon hexagonteam gallery-item">
-                               <div class="hexagon-in1">
-                                <div class="hexagon-in2" style="background-image: url(images/team/4.jpg);">
-                                <div class="overlay templatemo_overlay1">
-                                	<a href="#fb">
-                                   	 <div class="smallhexagon">
-                                  	 	 <span class="fa fa-facebook"></span>
-                                 	  </div>
-                                    </a>
-                                    <a href="#tw">
-                                     <div class="smallhexagon">
-                                       <span class="fa fa-twitter"></span>
-                                    </div>
-                                    </a>
-                                    <a href="#ln">
-                                     <div class="smallhexagon">
-                                       <span class="fa fa-linkedin"></span>
-                                    </div>
-                                    </a>
-                                    <a href="#rs">
-                                     <div class="smallhexagon">
-                                       <span class="fa fa-rss"></span>
-                                    </div>
-                                    </a>
-                                </div>
-
-                                <div class="clear"></div>
-                               	<div class="overlay templatemo_overlaytxt">Sed nonummy</div>
-                                </div>
-                            </div>
-                          </div>
-  			       </div>
-                    <div class="col-md-3 col-sm-8 templatemo_servicetxt">
-                    	<h2>HTML5 CSS3</h2>
-                        <p>Phasellus sodales magna orci, id scelerisque lectus faucibus a. Vivamus varius tincidunt sem. Etiam ultricies orci sit amet sem egestas varius vitae at lacus. Nunc blandit elit in mauris semper, id iaculis felis condimentum.</p>
-                    </div>
-                    </div>
-               </div>
-            </div>
-
+        </div>
      </div>
-     </div>
+    </div>
     <!--team end-->
-    <div class="clear"></div>
+    <div class="clear"></div
     <!-- service start -->
     <div class="content services" id="menu-3">
     <div class="container">
@@ -1867,7 +1741,7 @@
     	<div class="container">
     	<div class="row">
         	<div class="col-md-9 col-sm-12">
-            	<span>Copyright &copy; 2014 Company Name | Design: TemplateMo</span>
+            	<span>Copyright &copy; Gianvito Losapio | Design: TemplateMo</span>
             </div>
             <div class="col-md-3 col-sm-12 templatemo_rfooter">
             	  <a href="#">
