@@ -136,233 +136,6 @@
                 plugin.locked = false;
             },
 
-            // plot_3D_fun: function () {
-            //   let origin = [480, 300], scale = 20, key = function(d){ return d.id; }, startAngle = Math.PI/4;
-            //   //let svg    = d3.select('svg').call(d3.drag().on('drag', dragged).on('start', dragStart).on('end', dragEnd)).append('g');
-            //   let color  = d3.scaleOrdinal(d3.schemeCategory20);
-            //
-            //   plugin.image.hide()
-            //   plugin.lightbox.fadeIn('fast').append('<span class="lightbox-loading"></span>');
-            //
-            //   let path = plugin.image[0].src;
-            //
-            //   let arr = path.split("/");
-            //   let lastVal = arr.pop();
-            //   let filename = lastVal.split('.');
-            //   let ext = filename.pop();
-            //   let name = filename.pop();
-            //   let gallery_path = arr.join("/");
-            //
-            //   let path_1 = path
-            //   let path_2 = gallery_path + '/RecoCVD-D/' + name + '.jpeg'
-            //   let path_3 = gallery_path + '/RecoCVD-P/' + name + '.jpeg'
-            //
-            //   var img1 = $('<img src="' + path_1 + '" draggable="false">')
-            //   var img2 = $('<img src="' + path_2 + '" draggable="false">')
-            //   var img3 = $('<img src="' + path_3 + '" draggable="false">')
-            //
-            //   let csv_path_1 = gallery_path + '/NoCVD_tr/' + name + '_tr.csv';
-            //   let csv_path_2 = gallery_path + '/CVD-D_tr/' + name + '_tr.csv';
-            //   let csv_path_3 = gallery_path + '/CVD-P_tr/' + name + '_tr.csv';
-            //
-            //   plugin.lightbox.append('<div id="plot3D_1" left=200px top=200px></div>')
-            //   plugin.lightbox.append('<div id="plot3D_2" left=400px top=200px></div>')
-            //   plugin.lightbox.append('<div id="plot3D_3" left=600px top=200px></div>')
-            //
-            //   let plot3D_1 = $('#plot3D_1');
-            //   let plot3D_2 = $('#plot3D_2');
-            //   let plot3D_3 = $('#plot3D_3');
-            //
-            //   let grid3d = d3._3d()
-            //       .shape('GRID', 20)
-            //       .origin(origin)
-            //       .rotateY( startAngle)
-            //       .rotateX(-startAngle)
-            //       .scale(scale);
-            //   //console.log("grid3d", grid3d)
-            //
-            //   let point3d = d3._3d()
-            //       .x(function(d){ return d.x; })
-            //       .y(function(d){ return d.y; })
-            //       .z(function(d){ return d.z; })
-            //       .origin(origin)
-            //       .rotateY( startAngle)
-            //       .rotateX(-startAngle)
-            //       .scale(scale);
-            //
-            //   let yScale3d = d3._3d()
-            //       .shape('LINE_STRIP')
-            //       .origin(origin)
-            //       .rotateY( startAngle)
-            //       .rotateX(-startAngle)
-            //       .scale(scale);
-            //
-            //   init(csv_path_1, plot3D_1, 1, 0, 0);
-            //   init(csv_path_2, plot3D_2, 2, 200, 300);
-            //   init(csv_path_3, plot3D_3, 3, 400, 300);
-            //
-            //   function posPointX(d){
-            //       return d.projected.x;
-            //   }
-            //
-            //   function posPointY(d){
-            //       return d.projected.y;
-            //   }
-            //
-            //   function init(csv_path, plot_3D, id, lefttransl, toptransl){
-            //
-            //       let alpha = 0, beta = 0;
-            //       let svg;
-            //       let mx, my, mouseX, mouseY;
-            //       let xGrid = [], scatter = [], yLine = [];
-            //
-            //       function dragStart(){
-            //           mx = d3.event.x;
-            //           my = d3.event.y;
-            //       }
-            //
-            //       function dragged(){
-            //           mouseX = mouseX || 0;
-            //           mouseY = mouseY || 0;
-            //           beta   = (d3.event.x - mx + mouseX) * Math.PI / 230 ;
-            //           alpha  = (d3.event.y - my + mouseY) * Math.PI / 230  * (-1);
-            //           let data = [
-            //                grid3d.rotateY(beta + startAngle).rotateX(alpha - startAngle)(xGrid),
-            //               point3d.rotateY(beta + startAngle).rotateX(alpha - startAngle)(scatter),
-            //               yScale3d.rotateY(beta + startAngle).rotateX(alpha - startAngle)([yLine]),
-            //           ];
-            //           processData(data, 0);
-            //       }
-            //
-            //       function dragEnd(){
-            //           mouseX = d3.event.x - mx + mouseX;
-            //           mouseY = d3.event.y - my + mouseY;
-            //       }
-            //
-            //       function processData(data, svg, tt){
-            //
-            //           /* ----------- GRID ----------- */
-            //           // console.log("data", data);
-            //           // console.log("svg", svg);
-            //           svg = d3.select('svg').call(d3.drag().on('drag', dragged).on('start', dragStart).on('end', dragEnd)).append('g');
-            //           let xGrid = svg.selectAll('path.grid').data(data[0], key);
-            //
-            //           xGrid
-            //               .enter()
-            //               .append('path')
-            //               .attr('class', '_3d grid')
-            //               .merge(xGrid)
-            //               .attr('stroke', 'black')
-            //               .attr('stroke-width', 0.3)
-            //               .attr('fill', function(d){ return d.ccw ? 'lightgrey' : '#717171'; })
-            //               .attr('fill-opacity', 0.9)
-            //               .attr('d', grid3d.draw);
-            //
-            //           xGrid.exit().remove();
-            //
-            //           /* ----------- POINTS ----------- */
-            //
-            //           let points = svg.selectAll('circle').data(data[1], key);
-            //
-            //           points
-            //               .enter()
-            //               .append('circle')
-            //               .attr('class', '_3d')
-            //               .attr('opacity', 0)
-            //               .attr('cx', posPointX)
-            //               .attr('cy', posPointY)
-            //               .merge(points)
-            //               .transition().duration(tt)
-            //               .attr('r', 3)
-            //               .attr('stroke', function(d){ return d3.color(color(d.id)).darker(3); })
-            //               .attr('fill', function(d){ return color(d.id); })
-            //               .attr('opacity', 1)
-            //               .attr('cx', posPointX)
-            //               .attr('cy', posPointY);
-            //
-            //           points.exit().remove();
-            //
-            //           /* ----------- y-Scale ----------- */
-            //
-            //           let yScale = svg.selectAll('path.yScale').data(data[2]);
-            //
-            //           yScale
-            //               .enter()
-            //               .append('path')
-            //               .attr('class', '_3d yScale')
-            //               .merge(yScale)
-            //               .attr('stroke', 'black')
-            //               .attr('stroke-width', .5)
-            //               .attr('d', yScale3d.draw);
-            //
-            //           yScale.exit().remove();
-            //
-            //            /* ----------- y-Scale Text ----------- */
-            //
-            //           let yText = svg.selectAll('text.yText').data(data[2][0]);
-            //
-            //           yText
-            //               .enter()
-            //               .append('text')
-            //               .attr('class', '_3d yText')
-            //               .attr('dx', '.3em')
-            //               .merge(yText)
-            //               .each(function(d){
-            //                   d.centroid = {x: d.rotated.x, y: d.rotated.y, z: d.rotated.z};
-            //               })
-            //               .attr('x', function(d){ return d.projected.x; })
-            //               .attr('y', function(d){ return d.projected.y; })
-            //               .text(function(d){ return d[1] <= 0 ? d[1] : ''; });
-            //
-            //           yText.exit().remove();
-            //
-            //           d3.selectAll('._3d').sort(d3._3d().sort);
-            //       }
-            //
-            //
-            //       if($("#svg_" + id).length){
-            //         svg = $("#svg_" + id)
-            //       }
-            //       else{
-            //         svg = $('<svg id="svg_' + id + '" ></svg>');
-            //         plot_3D.append(svg);
-            //       }
-            //
-            //       svg.attr("transform", "translate(" + lefttransl + "," + toptransl + ")");
-            //
-            //       d3.csv(csv_path, function(d) {
-            //           // console.log("d", d)
-            //           return {x: +d.x, y: +d.y, z: +d.z};
-            //         }, function(error, rows) {
-            //             console.log("rows", rows);
-            //             console.log("error", error);
-            //             let d;
-            //             for(let i = 0; i < rows.length; i++){
-            //                     d = rows[i];
-            //                     xGrid.push([d.x, 1, d.z]);
-            //                     scatter.push({x: d.x, y: d.y, z: d.z, id: 'point_' + i});
-            //                   }
-            //
-            //             //d3.range(-1, 11, 1).forEach(function(d){ yLine.push([-j, -d, -j]); });
-            //             d3.range(0, 255, 1).forEach(function(d){ yLine.push([-255, -d, -255]); });
-            //
-            //             console.log("xGrid", xGrid)
-            //             // console.log("scatter", scatter)
-            //             // console.log("yLine", yLine)
-            //             let data = [
-            //                 grid3d(xGrid),
-            //                 point3d(scatter),
-            //                 yScale3d([yLine])
-            //             ];
-            //             processData(data, svg[0], 1000);
-            //         })
-            //
-            //   }
-            //
-            //
-            //
-            // },
-
             plot_3D_fun: function (){
 
               if($("#images").length){
@@ -541,17 +314,14 @@
             plot_histo: function () {
 
               if($("#histo1").length){
-                console.log('Sono entrato')
                 return
               }
 
               if($("#histo2").length){
-                console.log('Sono entrato')
                 return
               }
 
               if($("#histo3").length){
-                console.log('Sono entrato')
                 return
               }
 
@@ -742,9 +512,6 @@
                 if (yAxis) { d3.selectAll("g.y-axis").remove(); yAxis=false; }
 
                 function graphComponent(data, color, svg_) {
-                  console.log("svg_", svg_)
-                  console.log("svg_ id", svg_.id)
-                  console.log("svg_id 2", $(svg_).attr('id'))
                   let svg_id = svg_.id;
                   d3.selectAll(".bar-"+ svg_id + '_' + color).remove();
                   data = Object.keys(data).map(function(key){ return {freq:data[key], idx:+key}});
@@ -999,7 +766,6 @@
 
                 // TODO: change to avoid freezing
                 if($("#prot_images").length){
-                  console.log('Sono entrato')
                   return
                 }
 
@@ -1136,7 +902,6 @@
 
                  // TODO: change to avoid freezing
                  if($("#deut_images").length){
-                   console.log('Sono entrato')
                    return
                  }
 
@@ -1276,16 +1041,12 @@
 
              compute_size: function(img_elem, wHeight, wWidth, factor){
 
-                console.log(img_elem)
                  let ih, iw;
                  let nh = img_elem[0].naturalHeight;
                  let nw= img_elem[0].naturalWidth;
 
-                 console.log(nh, nw)
                  if (nw > (wWidth / factor)) {
-                     console.log('La larghezza è superiore a wWidth/factor')
                      let ratio = wWidth / (nw * factor);
-                     console.log(ratio)
                      iw = wWidth / factor;
                      ih = Math.round(nh * ratio);
                  }
@@ -1293,16 +1054,13 @@
                    iw = nw;
                  }
                  if (nh > (wHeight / factor)) {
-                     console.log("L'altezza è superiore a wHeight/factor")
                      let ratio = wHeight / (nh * factor);
-                     console.log(ratio)
                      ih= wHeight / factor;
                      iw = Math.round(nw * ratio);
                  }
                  else {
                    ih = nh;
                  }
-                 console.log(ih, iw)
                  return [ih, iw]
            },
 
