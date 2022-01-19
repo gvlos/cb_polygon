@@ -25,49 +25,49 @@
 .focuser5 {
   position: absolute;
   top: 410px;
-  left: 620px;
+  left: 645px;
   }
 
 .focuser6 {
   position: absolute;
   top: 410px;
-  left: 665px;
+  left: 690px;
   }
 
 .focuser7 {
   position: absolute;
   top: 410px;
-  left: 710px;
+  left: 735px;
   }
 
 .focuser8 {
   position: absolute;
   top: 410px;
-  left: 755px;
+  left: 780px;
   }
 
 .focuser9 {
   position: absolute;
   top: 410px;
-  left: 965px;
+  left: 1015px;
   }
 
 .focuser10 {
   position: absolute;
   top: 410px;
-  left: 1010px;
+  left: 1060px;
   }
 
 .focuser11 {
   position: absolute;
   top: 410px;
-  left: 1055px;
+  left: 1105px;
   }
 
 .focuser12 {
   position: absolute;
   top: 410px;
-  left: 1100px;
+  left: 1150px;
   }
 
 .bg-white {
@@ -207,7 +207,7 @@ body.blurred > * {
   position: absolute;
   font-family: Roboto Slab;
   left: 300px;
-  top: 165px;
+  top: 265px;
   font-size: 16px;
   text-align: center;
   background: no-repeat center center;
@@ -217,8 +217,52 @@ body.blurred > * {
 .lightbox-caption2 {
   position: absolute;
   font-family: Roboto Slab;
+  left: 690px;
+  top: 170px;
+  font-size: 16px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-caption5 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 1070px;
+  top: 170px;
+  font-size: 16px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-caption6 {
+  position: absolute;
+  font-family: Roboto Slab;
   left: 300px;
-  bottom: 80px;
+  top: 170px;
+  font-size: 16px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-caption7 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 665px;
+  top: 170px;
+  font-size: 16px;
+  text-align: center;
+  background: no-repeat center center;
+  color: black;
+}
+
+.lightbox-caption8 {
+  position: absolute;
+  font-family: Roboto Slab;
+  left: 1040px;
+  top: 170px;
   font-size: 16px;
   text-align: center;
   background: no-repeat center center;
@@ -342,7 +386,7 @@ body.blurred > * {
   color: black;
   background: no-repeat center center;
   top: 10px;
-  right: 595px;
+  right: 580px;
   font-size: 12px;
 }
 
@@ -353,9 +397,32 @@ body.blurred > * {
   color: black;
   background: no-repeat center center;
   top: 630px;
-  left: 355px;
+  left: 260px;
   font-size: 16px;
 }
+
+.lightbox-footer9 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 630px;
+  left: 340px;
+  font-size: 16px;
+}
+
+.lightbox-footer10 {
+  position: absolute;
+  font-family: Roboto Slab;
+  text-align: center;
+  color: black;
+  background: no-repeat center center;
+  top: 660px;
+  left: 510px;
+  font-size: 16px;
+}
+
 
 .lightbox-footer2 {
   position: absolute;
@@ -364,7 +431,7 @@ body.blurred > * {
   color: black;
   background: no-repeat center center;
   top: 655px;
-  left: 300px;
+  left: 310px;
   font-size: 16px;
 }
 

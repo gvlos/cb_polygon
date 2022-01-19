@@ -46,12 +46,12 @@
                       '<a href="#" class="lightbox-btn2 lightbox-button2"></a>' +
                       '<a href="#" class="lightbox-btn3 lightbox-button2"></a>' +
                       '<a href="#" class="lightbox-btn4 lightbox-button2"></a>' +
-                      // '<a href="#" class="lightbox-btn5 lightbox-button2"></a>' +
+                      '<a href="#" class="lightbox-btn5 lightbox-button2"></a>' +
                       '<div class="lightbox-legend1">All CVD systems</div>' +
                       '<div class="lightbox-legend2">Protanopia</div>' +
                       '<div class="lightbox-legend3">Deuteranopia</div>' +
                       '<div class="lightbox-legend4">Histograms</div>' +
-                      // '<div class="lightbox-legend5">3D colors</div>' +
+                      '<div class="lightbox-legend5">Fixation maps</div>' +
                       '<div class="lightbox-nav">'+
                       '<a href="#" class="lightbox-previous lightbox-button"></a>' +
                       '<a href="#" class="lightbox-next lightbox-button"></a>' +
@@ -603,9 +603,9 @@
                 let name = filename.pop();
                 let gallery_path = arr.join("/");
 
-                let path_1 = gallery_path + '/NoCVD/' + name + '_comp.jpeg'
-                let path_2 = gallery_path + '/CVD-D/' + name + '_comp.jpeg'
-                let path_3 = gallery_path + '/CVD-P/' + name + '_comp.jpeg'
+                let path_1 = gallery_path + '/NoCVD/' + name + '_loc.jpeg'
+                let path_2 = gallery_path + '/CVD-D/' + name + '_loc.jpeg'
+                let path_3 = gallery_path + '/CVD-P/' + name + '_loc.jpeg'
 
                 let csv_path_1 = gallery_path + '/NoCVD_tr/' + name + '_tr.csv';
                 let csv_path_2 = gallery_path + '/CVD-D_tr/' + name + '_tr.csv';
@@ -684,7 +684,7 @@
                 new_images.append(cvdp)
 
                 new_images.append('<div class="lightbox-footer1" \
-                <p><strong>(Top row)</strong> - Fixation points (white squares) and fixation maps (white areas are the most fixed ones)</p> \
+                <p><strong>(Top row)</strong> - Fixation points (black circles) as average of x, y coordinates of a few users during an eye-tracking session of 3 seconds</p> \
                 </div> \
                 <div class="lightbox-footer2" \
                 <p><strong>(Bottom row)</strong> - Color triplets corresponding to the fixation points in the RGB color space (x = Red, y = Green, z = Blue)</p> \
@@ -703,18 +703,12 @@
 
                     img1.width(imgWidth).height(imgHeight).css({
                     'top': opts.margin + 'px',
-                    'left': '220px'
+                    'left': '250px'
                     }).show();
 
-                    plugin.scatterplot3D(csv_path_1, plot3D_1, 1);
 
-                    plot3D_1.css({
-                    'position' : 'absolute',
-                    'top': 400 + 'px',
-                    'left': 210 + 'px'
-                    });
 
-                    let leftmargin = wWidth/3 + 150
+                    let leftmargin = wWidth/3 + 170
 
                     $(img2).load(function () {
                         $('.lightbox-loading').remove();
@@ -728,15 +722,7 @@
                     }).each(function() {
                       if(this.complete) $(this).trigger('load')});
 
-                      plugin.scatterplot3D(csv_path_2, plot3D_2, 2);
-
-                      plot3D_2.css({
-                      'position' : 'absolute',
-                      'top': 400 + 'px',
-                      'left': 580 + 'px'
-                      });
-
-                    let newleftmargin = wWidth/3 + 515
+                    let newleftmargin = wWidth/3 + 545
 
                     $(img3).load(function () {
                         $('.lightbox-loading').remove();
@@ -750,8 +736,22 @@
                     }).each(function() {
                       if(this.complete) $(this).trigger('load')});
 
-                      plugin.scatterplot3D(csv_path_3, plot3D_3, 3);
 
+                      plugin.scatterplot3D(csv_path_1, plot3D_1, 1);
+                      plot3D_1.css({
+                      'position' : 'absolute',
+                      'top': 400 + 'px',
+                      'left': 210 + 'px'
+                      });
+
+                      plugin.scatterplot3D(csv_path_2, plot3D_2, 2);
+                      plot3D_2.css({
+                      'position' : 'absolute',
+                      'top': 400 + 'px',
+                      'left': 580 + 'px'
+                      });
+
+                      plugin.scatterplot3D(csv_path_3, plot3D_3, 3);
                       plot3D_3.css({
                       'position' : 'absolute',
                       'top': 400 + 'px',
@@ -781,24 +781,25 @@
                 let name = filename.pop();
                 let gallery_path = arr.join("/");
 
-                let path_1 = path
-                let path_2 = gallery_path + '/CVD-P/' + name + '_comp.jpeg'
-                let path_3 = gallery_path + '/RecoCompCVD-P/' + name + '_comp.jpeg'
-                let path_4 = gallery_path + '/RecoCVD-P/' + name + '.jpeg'
+                let path_1 = gallery_path + '/NoCVD/' + name + '_loc.jpeg'
+                let path_2 = gallery_path + '/CVD-P/' + name + '_loc.jpeg'
+                let path_3 = gallery_path + '/RecoCompCVD-P/' + name + '_loc.jpeg'
 
                 let img1 = $('<img src="' + path_1 + '" draggable="false">')
                 let img2 = $('<img src="' + path_2 + '" draggable="false">')
                 let img3 = $('<img src="' + path_3 + '" draggable="false">')
-                let img4 = $('<img src="' + path_4 + '" draggable="false">')
 
-                let csv_path_1 = gallery_path + '/CVD-P_tr/' + name + '_tr.csv';
-                let csv_path_2 = gallery_path + '/RecoCVD-P_tr/' + name + '_tr.csv';
+                let csv_path_1 = gallery_path + '/NoCVD_tr/' + name + '_tr.csv';
+                let csv_path_2 = gallery_path + '/CVD-P_tr/' + name + '_tr.csv';
+                let csv_path_3 = gallery_path + '/RecoCVD-P_tr/' + name + '_tr.csv';
 
                 plugin.lightbox.append('<div id="plot3D_1"></div>')
                 plugin.lightbox.append('<div id="plot3D_2"></div>')
+                plugin.lightbox.append('<div id="plot3D_3"></div>')
 
                 let plot3D_1 = $('#plot3D_1');
                 let plot3D_2 = $('#plot3D_2');
+                let plot3D_3 = $('#plot3D_3');
 
                 plugin.lightbox.append('<div id="prot_images" ></div>')
 
@@ -807,22 +808,24 @@
                 new_images.append(' \
                 <div class="lightbox-title1"><b>Protanopia</b></div> \
                 <div class="lightbox-text1">Only green and blue receptors in the retina</div> \
-                <div class="lightbox-caption1">Original image</div> \
-                <div class="lightbox-caption2">Recolored image</div>\
-                <div class="lightbox-footer3"> \
-                <b>(Center)</b> - Fixation points (white squares) and fixation maps (white areas are the most fixed ones) \
+                <div class="lightbox-caption6">Normal users</div>\
+                <div class="lightbox-caption7">Protanopia users</div>\
+                <div class="lightbox-caption8">Protanopia users</div>\
+                <div class="lightbox-footer1" \
+                <p><strong>(Top row)</strong> - Fixation points (black circles) as average of x, y coordinates of a few users during an eye-tracking session of 3 seconds</p> \
                 </div> \
-                <div class="lightbox-footer4"> \
-                <b>(Right)</b> - Color triplets corresponding to the fixation points in the RGB color space (x = Red, y = Green, z = Blue) \
+                <div class="lightbox-footer2" \
+                <p><strong>(Bottom row)</strong> - Color triplets corresponding to the fixation points in the RGB color space (x = Red, y = Green, z = Blue)</p> \
                 </div>')
+
 
                 let factor, ratio, wHeight, wWidth, naturalWidth, naturalHeight, iHeight, iWidth;
 
                 wHeight = $(window).height() - opts.margin;
                 wWidth = $(window).outerWidth(true) - opts.margin;
 
-                let leftmargin = wWidth/3 + 150
-                let newleftmargin = wWidth/3 + 515
+                let leftmargin = wWidth/3 + 170
+                let newleftmargin = wWidth/3 + 545
                 let topmargin = wHeight/3 + 240;
 
                 $(img1).load(function () {
@@ -859,39 +862,31 @@
                         img3.hide()
                         new_images.append(img3);
                         img3.width(imgWidth).height(imgHeight).css({
-                          'top': topmargin + 'px',
-                          'left': leftmargin + 'px'
+                          'top': opts.margin + 'px',
+                          'left': newleftmargin + 'px'
                           }).show();
                     }).each(function() {
                       if(this.complete) $(this).trigger('load')});
 
-                    $(img4).load(function () {
-                        $('.lightbox-loading').remove();
-
-                        img4.hide()
-                        new_images.append(img4);
-
-                        img4.width(imgWidth).height(imgHeight).css({
-                        'top': topmargin + 'px',
-                        'left': '220px'
-                        }).show();
-                    }).each(function() {
-                      if(this.complete) $(this).trigger('load')});
-
                       plugin.scatterplot3D(csv_path_1, plot3D_1, 1);
-
                       plot3D_1.css({
                       'position' : 'absolute',
-                      'top': opts.margin + 'px',
-                      'left': newleftmargin + 'px'
+                      'top': 400 + 'px',
+                      'left': 210 + 'px'
                       });
 
                       plugin.scatterplot3D(csv_path_2, plot3D_2, 2);
-
                       plot3D_2.css({
                       'position' : 'absolute',
-                      'top': topmargin + 'px',
-                      'left': newleftmargin + 'px'
+                      'top': 400 + 'px',
+                      'left': 580 + 'px'
+                      });
+
+                      plugin.scatterplot3D(csv_path_3, plot3D_3, 3);
+                      plot3D_3.css({
+                      'position' : 'absolute',
+                      'top': 400 + 'px',
+                      'left': 950 + 'px'
                       });
 
                 });
@@ -900,144 +895,262 @@
 
              deuteranopia: function () {
 
-                 // TODO: change to avoid freezing
-                 if($("#deut_images").length){
-                   return
-                 }
+               // TODO: change to avoid freezing
+               if($("#deut_images").length){
+                 return
+               }
 
-                 plugin.image.hide()
-                 plugin.lightbox.fadeIn('fast').append('<span class="lightbox-loading"></span>');
+               plugin.image.hide()
+               plugin.lightbox.fadeIn('fast').append('<span class="lightbox-loading"></span>');
 
-                 let path = plugin.image[0].src
+               let path = plugin.image[0].src
 
-                 let arr = path.split("/");
-                 let lastVal = arr.pop();
-                 let filename = lastVal.split('.');
-                 let ext = filename.pop();
-                 let name = filename.pop();
-                 let gallery_path = arr.join("/");
+               let arr = path.split("/");
+               let lastVal = arr.pop();
+               let filename = lastVal.split('.');
+               let ext = filename.pop();
+               let name = filename.pop();
+               let gallery_path = arr.join("/");
 
-                 let path_1 = path
-                 let path_2 = gallery_path + '/CVD-D/' + name + '_comp.jpeg'
-                 let path_3 = gallery_path + '/RecoCompCVD-D/' + name + '_comp.jpeg'
-                 let path_4 = gallery_path + '/RecoCVD-D/' + name + '.jpeg'
+               let path_1 = gallery_path + '/NoCVD/' + name + '_loc.jpeg'
+               let path_2 = gallery_path + '/CVD-D/' + name + '_loc.jpeg'
+               let path_3 = gallery_path + '/RecoCompCVD-D/' + name + '_loc.jpeg'
 
-                 var img1 = $('<img src="' + path_1 + '" draggable="false">')
-                 var img2 = $('<img src="' + path_2 + '" draggable="false">')
-                 var img3 = $('<img src="' + path_3 + '" draggable="false">')
-                 var img4 = $('<img src="' + path_4 + '" draggable="false">')
+               let img1 = $('<img src="' + path_1 + '" draggable="false">')
+               let img2 = $('<img src="' + path_2 + '" draggable="false">')
+               let img3 = $('<img src="' + path_3 + '" draggable="false">')
 
-                 let csv_path_1 = gallery_path + '/CVD-D_tr/' + name + '_tr.csv';
-                 let csv_path_2 = gallery_path + '/RecoCVD-D_tr/' + name + '_tr.csv';
+               let csv_path_1 = gallery_path + '/NoCVD_tr/' + name + '_tr.csv';
+               let csv_path_2 = gallery_path + '/CVD-D_tr/' + name + '_tr.csv';
+               let csv_path_3 = gallery_path + '/RecoCVD-D_tr/' + name + '_tr.csv';
 
-                 plugin.lightbox.append('<div id="plot3D_1"></div>')
-                 plugin.lightbox.append('<div id="plot3D_2"></div>')
+               plugin.lightbox.append('<div id="plot3D_1"></div>')
+               plugin.lightbox.append('<div id="plot3D_2"></div>')
+               plugin.lightbox.append('<div id="plot3D_3"></div>')
 
-                 let plot3D_1 = $('#plot3D_1');
-                 let plot3D_2 = $('#plot3D_2');
+               let plot3D_1 = $('#plot3D_1');
+               let plot3D_2 = $('#plot3D_2');
+               let plot3D_3 = $('#plot3D_3');
 
-                 plugin.lightbox.append('<div id="deut_images" ></div>')
-                 let new_images = $('#deut_images')
+               plugin.lightbox.append('<div id="deut_images" ></div>')
 
-                 new_images.append(' \
-                 <div class="lightbox-title2"><b>Deuteranopia</b></div> \
-                 <div class="lightbox-text2">Only red and blue receptors in the retina</div> \
-                 <div class="lightbox-caption1">Original image</div> \
-                 <div class="lightbox-caption2">Recolored image</div>\
-                 <div class="lightbox-footer3"> \
-                 <b>(Center)</b> - Fixation points (white squares) and fixation maps (white areas are the most fixed ones) \
-                 </div> \
-                 <div class="lightbox-footer4"> \
-                 <b>(Right)</b> - Color triplets corresponding to the fixation points in the RGB color space (x = Red, y = Green, z = Blue) \
-                 </div>')
+               let new_images = $('#deut_images')
 
-                 let factor, ratio, wHeight, wWidth, naturalWidth, naturalHeight, iHeight, iWidth;
+               new_images.append(' \
+               <div class="lightbox-title2"><b>Deuteranopia</b></div> \
+               <div class="lightbox-text2">Only red and blue receptors in the retina</div> \
+               <div class="lightbox-caption6">Normal users</div>\
+               <div class="lightbox-caption7">Deuteranopia users</div>\
+               <div class="lightbox-caption8">Deuteranopia users</div>\
+               <div class="lightbox-footer1" \
+               <p><strong>(Top row)</strong> - Fixation points (black circles) as average of x, y coordinates of a few users during an eye-tracking session of 3 seconds</p> \
+               </div> \
+               <div class="lightbox-footer2" \
+               <p><strong>(Bottom row)</strong> - Color triplets corresponding to the fixation points in the RGB color space (x = Red, y = Green, z = Blue)</p> \
+               </div>')
 
-                 wHeight = $(window).height() - opts.margin;
-                 wWidth = $(window).outerWidth(true) - opts.margin;
+               let factor, ratio, wHeight, wWidth, naturalWidth, naturalHeight, iHeight, iWidth;
 
-                 $(img1).load(function () {
-                     $('.lightbox-loading').remove();
-                     img1.hide()
+               wHeight = $(window).height() - opts.margin;
+               wWidth = $(window).outerWidth(true) - opts.margin;
 
-                     let size_img1 = plugin.compute_size($(img1), wHeight, wWidth, 2.7);
-                     let imgHeight = size_img1[0]
-                     let imgWidth = size_img1[1]
+               let leftmargin = wWidth/3 + 170
+               let newleftmargin = wWidth/3 + 545
+               let topmargin = wHeight/3 + 240;
 
-                     new_images.append(img1);
+               $(img1).load(function () {
+                   $('.lightbox-loading').remove();
+                   img1.hide()
 
-                     img1.width(imgWidth).height(imgHeight).css({
-                     'top': opts.margin + 'px',
-                     'left': '220px'
-                     }).show();
+                   let size_img1 = plugin.compute_size($(img1), wHeight, wWidth, 2.7);
+                   let imgHeight = size_img1[0]
+                   let imgWidth = size_img1[1]
 
-                     let leftmargin = wWidth/3 + 150
-                     let newleftmargin = wWidth/3 + 515
-                     let topmargin = wHeight/3 + 240;
+                   new_images.append(img1);
 
-                     $(img2).load(function () {
-                         $('.lightbox-loading').remove();
-                         img2.hide()
-                         new_images.append(img2);
-
-                         img2.width(imgWidth).height(imgHeight).css({
-                         'top': opts.margin + 'px',
-                         'left': leftmargin + 'px'
-                         }).show();
-                     }).each(function() {
-                       if(this.complete) $(this).trigger('load')});
+                   img1.width(imgWidth).height(imgHeight).css({
+                   'top': opts.margin + 'px',
+                   'left': '220px'
+                   }).show();
 
 
+                   $(img2).load(function () {
+                       $('.lightbox-loading').remove();
+                       img2.hide()
+                       new_images.append(img2);
 
-                     $(img3).load(function () {
-                         $('.lightbox-loading').remove();
-
-                         img3.hide()
-                         new_images.append(img3);
-                         img3.width(imgWidth).height(imgHeight).css({
-                         'top': topmargin + 'px',
-                         'left': leftmargin + 'px'
-                         }).show();
-                     }).each(function() {
-                       if(this.complete) $(this).trigger('load')});
-
-
-
-                     $(img4).load(function () {
-                         $('.lightbox-loading').remove();
-
-                         img4.hide()
-                         new_images.append(img4);
-
-                         img4.width(imgWidth).height(imgHeight).css({
-                         'top': topmargin + 'px',
-                         'left': '220px'
-                         }).show();
-                     }).each(function() {
-                       if(this.complete) $(this).trigger('load')});
-
-                       let labWidth = 300
-                       let labHeight = 194
-
-                       plugin.scatterplot3D(csv_path_1, plot3D_1, 1);
-
-                       plot3D_1.css({
-                       'position' : 'absolute',
+                       img2.width(imgWidth).height(imgHeight).css({
                        'top': opts.margin + 'px',
-                       'left': newleftmargin + 'px'
-                       });
+                       'left': leftmargin + 'px'
+                       }).show();
+                   }).each(function() {
+                     if(this.complete) $(this).trigger('load')});
 
-                       plugin.scatterplot3D(csv_path_2, plot3D_2, 2);
+                   $(img3).load(function () {
+                       $('.lightbox-loading').remove();
 
-                       plot3D_2.css({
-                       'position' : 'absolute',
-                       'top': topmargin + 'px',
-                       'left': newleftmargin + 'px'
-                       });
+                       img3.hide()
+                       new_images.append(img3);
+                       img3.width(imgWidth).height(imgHeight).css({
+                         'top': opts.margin + 'px',
+                         'left': newleftmargin + 'px'
+                         }).show();
+                   }).each(function() {
+                     if(this.complete) $(this).trigger('load')});
 
-                 });
+                     plugin.scatterplot3D(csv_path_1, plot3D_1, 1);
+                     plot3D_1.css({
+                     'position' : 'absolute',
+                     'top': 400 + 'px',
+                     'left': 210 + 'px'
+                     });
 
-          },
+                     plugin.scatterplot3D(csv_path_2, plot3D_2, 2);
+                     plot3D_2.css({
+                     'position' : 'absolute',
+                     'top': 400 + 'px',
+                     'left': 580 + 'px'
+                     });
+
+                     plugin.scatterplot3D(csv_path_3, plot3D_3, 3);
+                     plot3D_3.css({
+                     'position' : 'absolute',
+                     'top': 400 + 'px',
+                     'left': 950 + 'px'
+                     });
+
+               });
+
+        },
+          fix_map: function () {
+
+              // TODO: change to avoid freezing
+              if($("#fm_images").length){
+                return
+              }
+
+              plugin.image.hide()
+              plugin.lightbox.fadeIn('fast').append('<span class="lightbox-loading"></span>');
+
+              let path = plugin.image[0].src
+
+              let arr = path.split("/");
+              let lastVal = arr.pop();
+              let filename = lastVal.split('.');
+              let ext = filename.pop();
+              let name = filename.pop();
+              let gallery_path = arr.join("/");
+
+              let path_1 = gallery_path + '/NoCVD/' + name + '_map.jpeg'
+              let path_2 = gallery_path + '/CVD-D/' + name + '_map.jpeg'
+              let path_3 = gallery_path + '/CVD-P/' + name + '_map.jpeg'
+              let path_4 = gallery_path + '/RecoCompCVD-D/' + name + '_map.jpeg'
+              let path_5 = gallery_path + '/RecoCompCVD-P/' + name + '_map.jpeg'
+
+              var img1 = $('<img src="' + path_1 + '" draggable="false">')
+              var img2 = $('<img src="' + path_2 + '" draggable="false">')
+              var img3 = $('<img src="' + path_3 + '" draggable="false">')
+              var img4 = $('<img src="' + path_4 + '" draggable="false">')
+              var img5 = $('<img src="' + path_5 + '" draggable="false">')
+
+              plugin.lightbox.append('<div id="fm_images" ></div>')
+              let new_images = $('#fm_images')
+
+              new_images.append(' \
+              <div class="lightbox-title2"><b>Fixation maps</b></div> \
+              <div class="lightbox-caption1">Normal user</div> \
+              <div class="lightbox-caption2">Deuteranopia</div>\
+              <div class="lightbox-caption5">Protanopia</div>\
+              <div class="lightbox-footer9" \
+              <p> Fixation maps as average of x, y coordinates of a few users during an eye-tracking session of 3 seconds</p> \
+              </div> \
+              <div class="lightbox-footer10" \
+              <p>White areas are the most fixed ones, followed by yellow, red</p> \
+              </div> \
+              ')
+
+              let factor, ratio, wHeight, wWidth, naturalWidth, naturalHeight, iHeight, iWidth;
+
+              wHeight = $(window).height() - opts.margin;
+              wWidth = $(window).outerWidth(true) - opts.margin;
+
+              let leftmargin = wWidth/3 + 170
+              let newleftmargin = wWidth/3 + 545
+              let topmargin = wHeight/3 + 240;
+
+              $(img1).load(function () {
+                  $('.lightbox-loading').remove();
+                  img1.hide()
+
+                  let size_img1 = plugin.compute_size($(img1), wHeight, wWidth, 2.7);
+                  let imgHeight = size_img1[0]
+                  let imgWidth = size_img1[1]
+
+                  new_images.append(img1);
+
+                  img1.width(imgWidth).height(imgHeight).css({
+                  'top': '300px',
+                  'left': '220px'
+                  }).show();
+
+                  $(img2).load(function () {
+                      $('.lightbox-loading').remove();
+                      img2.hide()
+                      new_images.append(img2);
+
+                      img2.width(imgWidth).height(imgHeight).css({
+                      'top': opts.margin + 'px',
+                      'left': leftmargin + 'px'
+                      }).show();
+                  }).each(function() {
+                    if(this.complete) $(this).trigger('load')});
+
+
+
+                  $(img3).load(function () {
+                      $('.lightbox-loading').remove();
+
+                      img3.hide()
+                      new_images.append(img3);
+                      img3.width(imgWidth).height(imgHeight).css({
+                      'top': opts.margin + 'px',
+                      'left': newleftmargin + 'px'
+                      }).show();
+                  }).each(function() {
+                    if(this.complete) $(this).trigger('load')});
+
+
+
+                  $(img4).load(function () {
+                      $('.lightbox-loading').remove();
+
+                      img4.hide()
+                      new_images.append(img4);
+
+                      img4.width(imgWidth).height(imgHeight).css({
+                      'top': topmargin + 'px',
+                      'left': leftmargin + 'px'
+                      }).show();
+                  }).each(function() {
+                    if(this.complete) $(this).trigger('load')});
+
+                    $(img5).load(function () {
+                        $('.lightbox-loading').remove();
+
+                        img5.hide()
+                        new_images.append(img5);
+
+                        img5.width(imgWidth).height(imgHeight).css({
+                        'top': topmargin + 'px',
+                        'left': newleftmargin + 'px'
+                        }).show();
+                    }).each(function() {
+                      if(this.complete) $(this).trigger('load')});
+
+
+              });
+
+       },
 
              compute_size: function(img_elem, wHeight, wWidth, factor){
 
@@ -1143,6 +1256,7 @@
                   $("#plot3D_3").remove();
                   $("#images").remove();
                   $("#text_container").remove();
+                  $("#fm_images").remove();
                     plugin.previous();
                     return false;
                 });
@@ -1161,6 +1275,7 @@
                   $("#plot3D_3").remove();
                   $("#images").remove();
                   $("#text_container").remove();
+                  $("#fm_images").remove();
                     plugin.next();
                     return false;
                 });
@@ -1179,7 +1294,7 @@
                   $("#plot3D_3").remove();
                   $("#images").remove();
                   $("#text_container").remove();
-
+                  $("#fm_images").remove();
                     plugin.close();
                     return false;
                 });
@@ -1197,6 +1312,7 @@
                     $("#plot3D_3").remove();
                     $("#images").remove();
                     $("#text_container").remove();
+                    $("#fm_images").remove();
                     plugin.allcvsystem();
                     return false;
                 });
@@ -1214,6 +1330,7 @@
                     $("#plot3D_3").remove();
                     $("#images").remove();
                     $("#text_container").remove();
+                    $("#fm_images").remove();
                     plugin.protanopia();
                     return false;
                 });
@@ -1231,11 +1348,12 @@
                     $("#plot3D_3").remove();
                     $("#images").remove();
                     $("#text_container").remove();
+                    $("#fm_images").remove();
                     plugin.deuteranopia();
                     return false;
                 });
 
-                // Button3
+                // Button4
                 $(plugin.lightbox).on('click', '.lightbox-btn4', function () {
                     $("#prot_images").remove();
                     $("#deut_images").remove();
@@ -1245,9 +1363,11 @@
                     $("#plot3D_3").remove();
                     $("#images").remove();
                     $("#text_container").remove();
+                    $("#fm_images").remove();
                     plugin.plot_histo();
                     return false;
                 });
+
 
                 $(plugin.lightbox).on('click', '.lightbox-btn5', function () {
                     $("#prot_images").remove();
@@ -1257,7 +1377,13 @@
                     $("#histo1").remove();
                     $("#histo2").remove();
                     $("#histo3").remove();
-                    plugin.plot_3D_fun();
+                    $("#plot3D_1").remove();
+                    $("#plot3D_2").remove();
+                    $("#plot3D_3").remove();
+                    $("#images").remove();
+                    $("#text_container").remove();
+                    $("#fm_images").remove();
+                    plugin.fix_map();
                     return false;
                 });
 

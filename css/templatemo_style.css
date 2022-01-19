@@ -465,7 +465,7 @@ a.menu-toggle-btn {
   margin-left: -16px;
 }
 .templatemo_gallerygap { margin-bottom: 13%; }
-.templatemo_gallerygap img{ margin-top: 30px; margin-left: 90px}
+.templatemo_gallerygap img{ margin-top: 30px; margin-left: 60px}
 .templatemo_gallerygap span.fa	{ font-size: 22px; margin-bottom: 15px; }
 .templatemo_gallerytop	{ margin-top: 11%; }
 .templatemo_loadmore	{
@@ -747,7 +747,7 @@ and (max-width : 559px)	{
   }
 
  @media	(max-width: 991px) {
-	.templatemo_footer div.col-sm-12{ float: left; margin-top: 10px; width: 100%; }
+	.templatemo_footer div.col-sm-12{ float: left; margin-top: 10px; margin-left:0px; width: 100%; }
 
  }
 .content { display: none; height: auto; }
