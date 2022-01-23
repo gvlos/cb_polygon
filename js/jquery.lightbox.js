@@ -578,7 +578,7 @@
                     .style('opacity' , 1.0);
                   deaden.forEach(color=>{
                   svg.selectAll('.bar-' + svg_id + '_' + color).transition(t)
-                    .style('opacity', 0.2);
+                    .style('opacity', 0.1);
                   });
                 }
 
